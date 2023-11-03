@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc_io_example;
+
+// The Pong service definition.
+service PingPongService {
+    // Sends data to be answered
+    rpc pong (stream PingRequest) returns (stream PongReply) {}
+}
+
+// The request message containing count.
+message PingRequest {
+    int32 countIn = 1;
+}
+
+// The response message containing the count
+message PongReply {
+    int32 countOut = 1;
+}
